@@ -159,25 +159,33 @@ function App()
 	const handleLandmarkChange=(e)=>{
 		setLandmarkIndex(Number(e.target.value));
 	}
-	console.log(states[stateIndex].city[cityIndex].landmarks);
+	// console.log(states[stateIndex].city[cityIndex].landmarks);
 
 	return (
 	<div id="main">
-		<h3 id="state-name">{states[stateIndex].name}</h3>
-		<p id="state-description">{states[stateIndex].description}</p>
-		<select id="state" onChange={handleStateChange}>
-			{states.map((st,index)=><option key={index} value={index}>{st.name}</option>)}
-		</select>
-		<h3 id="city-name">{states[stateIndex].city[cityIndex].name}</h3>
-		<p id="city-description">{states[stateIndex].city[cityIndex].description}</p>
-		<select id="city" onChange={handleCityChange}>
-			{states[stateIndex].city.map((city,index)=><option key={index} value={index}>{city.name}</option>)}
-		</select>
-		<h3 id="landmark-name">{states[stateIndex].city[cityIndex].landmarks[landmarkIndex].name}</h3>
-		<p id="landmark-description">{states[stateIndex].city[cityIndex].landmarks[landmarkIndex].description}</p>
-		<select id="landmark" onChange={handleLandmarkChange}>
+		<div id="state-title">
+			<select id="state" onChange={handleStateChange}>
+				{states.map((st,index)=><option key={index} value={index}>{st.name}</option>)}
+			</select>
+			<h3 id="state-name">{states[stateIndex].name}</h3>
+			<p id="state-description">{states[stateIndex].description}</p>
+		</div>
+		<div id="city-title">
+			<select id="city" onChange={handleCityChange}>
+				{states[stateIndex].city.map((city,index)=><option key={index} value={index}>{city.name}</option>)}
+			</select>
+			<h3 id="city-name">{states[stateIndex].city[cityIndex].name}</h3>
+			<p id="city-description">{states[stateIndex].city[cityIndex].description}</p>
+		</div>
+		<div id="landmark-title">
+			<select id="landmark" onChange={handleLandmarkChange}>
 			{states[stateIndex].city[cityIndex].landmarks.map((l,index)=><option key={index} value={index}>{l.name}</option>)}
-		</select>
+			</select>
+			<h3 id="landmark-name">{states[stateIndex].city[cityIndex].landmarks[landmarkIndex].name}</h3>
+			<p id="landmark-description">{states[stateIndex].city[cityIndex].landmarks[landmarkIndex].description}</p>
+		</div>
+		
+		
 	</div>
 	);
 }
