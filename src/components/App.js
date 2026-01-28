@@ -1,6 +1,5 @@
 import React, { useState,useReducer } from "react";
 import "./../styles/App.css";
-import Card from "./Card";
  
  
 const states = [{
@@ -195,21 +194,6 @@ const selectedLandmark = selectedCity.landmarks[landmarkIndex];
     </option>
   ))}
 </select>
-{/* 
-<Card
-  name={selectedState.name}
-  description={selectedState.description}
-/>
- 
-<Card
-  name={selectedCity.name}
-  description={selectedCity.description}
-/>
-<Card 
-name={selectedLandmark.name}
-description={selectedLandmark.description}
- 
-/> */}
  
 <div id="state-title">{selectedState.name}</div>
 <div id="state-description">{selectedState.description}</div>
